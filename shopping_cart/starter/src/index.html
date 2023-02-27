@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta http-equiv="refresh" content="5">-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <link href="assets/styles.css" rel="stylesheet">
+    <script src="assets/script.js" defer></script>
+    <script src="assets/front.js" defer></script>
+</head>
+<body>
+    <!-- Modal Box -->
+    <div class="modal-box flex hide">
+        <!-- Modal Box content -->
+        <form>
+            <a class="close-modal-box" href="#" title="close">x</a>
+            <h2> Add New Product </h2>
+            <div class="error-info hide"></div>
+            <label for="prod-name">Name</label>
+            <input class="received" type="text" name="prod-name" id="prod-name" value="" placeholder="Apple(s)">
+            
+            <label for="prod-price">Price ($)</label>
+            <input class="received" type="number" name="prod-price" id="prod-price" value=""  placeholder="0">
+            
+            <label for="prod-quantity">Quantity</label>
+            <input class="received" type="number" name="prod-quantity" id="prod-quantity" value="" placeholder="0" disabled>
+            
+            <label for="prod-image">Image</label>
+            <input class="received" type="text" name="prod-image" id="prod-image" value="" placeholder="Image Link">
+            
+            <input type="submit" value="Submit" />
+        </form>
+        
+    </div>
+
+    <!-- Webpage Content -->
+    <div class="shopping-cart">
+        <h1>Kirana's Fruit Stand</h1>
+        <div class="currency-selector"></div>
+        <div class="cart-container">
+            <div class="products-container">
+                <h2>Products</h2>
+                <div class="products"></div>
+                <h2>Your Shopping Cart</h2>
+                <div class="empty-btn"></div>
+                <div class="cart"></div>
+            </div>
+            <div class="checkout-container">
+                <button class="add-product show">Add New Product</button>
+                <br>
+                <div class="credit-card-added hide"> 
+                    <img alt="Credit card" src="images/credit-card-icon.png">
+                    <p> Credit card successfully added.</p>
+                </div>
+                <div class="checkout">
+                    <h2>Checkout</h2>
+                    <div class="cart-total"></div>
+                    <form class="hide">
+                        <label>Enter Cash Received:</label>
+                        <input class="received-money" type="text">
+                        <button class="pay">Submit</button> 
+                    </form>
+                    <h3>Receipt</h3>
+                    <div class="pay-summary"></div>
+                </div>
+                
+                <div class="add-credit-card">
+                    <h2>Add Credit Card</h2>
+                    <div class="error-info hide"></div>
+                    <br>
+                    <form>
+                        <label for="card-number">Card Number</label>
+                        <input class="received" type="number" name="card-number" id="card-number" value="" placeholder="1563 9642 6734 2568" maxlength="16">
+                        
+                        <label for="card-name">Card Name</label>
+                        <input class="received" type="text" name="card-name" id="card-name" value=""  placeholder="Kevin Durant">
+                        
+                        <label for="card-ccv">CCV</label>
+                        <input class="received" type="number" name="card-ccv" id="card-ccv" value="" placeholder="504" maxlength="3" >
+                        
+                        <label for="card-expiry-date">Expiry Date</label>
+                        <input class="received" type="month" name="card-expiry-date" id="card-expiry-date" value="" >
+                        
+                    <figure>
+                        <img alt="Credit card Types" src="images/supported-creditcard.png" width="200">
+                        <figcaption class="hide">
+                            Support credit cards
+                        </figcaption>
+                    </figure>
+                        
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+                
+                
+
+            </div>
+
+                
+        </div>
+        
+    </div>
+    
+</body>
+</html>

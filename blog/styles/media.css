@@ -1,0 +1,114 @@
+@media (min-width: 599px) and (max-width: 800px) {
+    .other-posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* post.html */
+    #post-grid-layout {
+        display: block;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+    #page-width {
+        width: auto;
+    }
+
+    /* nav */
+    nav {
+        width: auto !important;
+    }
+    .nav-btn {
+        margin: 0px !important;
+    }
+    
+    
+    
+    /* POST CARD */
+    .post-card {
+        flex-wrap: wrap;
+    }
+    .post-card > img {
+        aspect-ratio: 1/1;
+        margin-bottom: 10px;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    /* Other posts @ index.html */
+    .other-posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+        /* post card details  */
+    .post-card > .post-details {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer .container {
+        width: 90%;
+    }
+    .footer .container {
+        display: block;
+    }
+    .footer .container > * {
+        margin-bottom: 20px;
+    }
+
+
+    /* post.html */
+    #post-grid-layout {
+        display: block;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    #page-width {
+        width: 100% !important;
+    }
+    nav {
+        width: auto !important;
+    }
+    .nav-btn {
+        margin: 0px !important;
+    }
+    /* POST CARD */
+    .post-card {
+        flex-wrap: wrap;
+    }
+    .post-card > img {
+        aspect-ratio: 1/1;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    /* Other posts @ index.html */
+    .other-posts{ 
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    /* post card details  */
+    .post-card > .post-details {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer .container {
+        width: 90%;
+    }
+    .footer .container {
+        display: block;
+    }
+    .footer .container > * {
+        margin-bottom: 20px;
+    }
+
+
+    /* post.html */
+    #post-grid-layout {
+        display: block;
+    }
+    
+}

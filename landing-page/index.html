@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulating the DOM</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet"> 
+  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- Load Styles -->
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- HTML Follows BEM naming conventions 
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>Faleye Korede Gilbert </h1>
+    </header>
+    <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+    <section id="section1" data-nav="Summary" class="active">
+      <div class="landing__container">
+        <h2>Summary</h2>
+        <p>
+          Passionate about providing solution to problems and automating tasks. 
+          Well-versed in programming languages like C, Python and JavaScript. 
+          Knowledgeable in Software development, Machine learning, Text 
+          processing and Database management. My goal is to acquire experience, 
+          apply my skills to solve problems and improve efficiency in businesses.
+        </p>
+      </div>
+    </section>
+    <section id="section2" data-nav="Skill">
+      <div class="landing__container">
+        <h2>SKill Highlights</h2>
+        <h3>Technical Skills</h3>
+        <p>
+              <b>Programming languages</b> - Python, C, JavaScript<br>
+              <b>Database</b> - MySQL, PostgreSQl, SQLite<br>
+              <b>Web development</b> - HTML5, CSS3, Bootstrap, JQuery<br> 
+              <b>Machine learning/data analysis</b> - Sci-kit Learn, Numpy, Pandas, 
+              Matplotlib<br>
+              <b>Mobile development</b> - Kivy & KivyMD.<br> 
+              <b>Cloud</b> - AWS (Amazon web services)<br> 
+              <b>Others</b> - MVC (Model View Control), Regex<br> <br> <br>
+
+          <h3>Non-technical Skills </h3>
+              Strong decision making, Problem solving ability.
+        </p>
+      </div>
+    </section>
+    <section id="section3" data-nav="Project">
+      <div class="landing__container">
+        <h2>Project</h2>
+        <p>          
+          <b>Malware Detector</b> - The malware detector was a school project
+          (Malware detection system using Random Forest Classifier). The malware 
+          detector uses a trained machine learning model to detect malicious 
+          executable files. The machine learning algorithm that was used to train 
+          the model is called Random Forest Classifier. 
+          Tools: Python, Sci-kit Learn, Numpy, Pandas, Joblib, Kivy, KivyMD, PEfile
+          <br> <br>
+           <b>Diabetes Diagnosis</b> - The diabetes diagnosis app uses a deep 
+          learning learning algorithm called MLPClassifier (Multilayer perceptron 
+          classifier) to determine if a person has diabetes or not, depending on 
+          some diabetes risk factor data collected from the user.
+          Tools: Python, Sci-kit Learn, Numpy, Pandas, Joblib, Kivy, KivyMD
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer class="page__footer">
+    <p>&copy Faleye Korede</p>
+  </footer>
+
+</body>
+</html>
