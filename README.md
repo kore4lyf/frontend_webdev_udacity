@@ -1,9 +1,9 @@
 # Udacity Frontend Nanodegree
 
-[Animal Trading Card](./animal-trading-card)
+- [Animal Trading Card](./animal-trading-card)
 
-[Blog](./blog) 
+- [Blog](./blog) 
 
-[Shopping Cart](./shopping_cart)
+- [Shopping Cart](./shopping_cart)
 
-[Landing Page](./landing-page)
+- [Landing Page](./landing-page)
