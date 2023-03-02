@@ -9,76 +9,178 @@
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet"> 
   <!-- Load Styles -->
   <link href="css/styles.css" rel="stylesheet">
+  <!-- Load Fontawesome-->
+  <link href="css/fontawesome/fontawesome.min.css" rel="stylesheet">
+  <link href="css/fontawesome/all.min.css" rel="stylesheet">
   <!-- Load Styles -->
   <script src="js/app.js" defer></script>
 </head>
 <body>
   <!-- HTML Follows BEM naming conventions 
-  IDs are only used for sections to connect menu achors to sections -->
+  IDs are "only used for sections to connect menu achors to sections -->
   <header class="page__header">
-    <nav class="navbar__menu">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
-      <ul id="navbar__list"></ul>
-    </nav>
+    <div class="auto-width">
+        <h3 class="logo">CV</h3>
+        <nav class="navbar__menu">
+          <!-- Navigation starts as empty UL that will be populated with JS -->
+          <ul id="navbar__list"></ul>
+        </nav>
+    </div>
   </header>
+  
   <main>
-    <header class="main__hero">
-      <h1>Faleye Korede Gilbert </h1>
+    <header class="main__hero auto-width">
+        <h1>Faleye Korede Gilbert </h1>
+        <a href="mailto:akfaleye@gmail.com" title="akfaleye@gmail.com"> <span class="fa fa-envelope fa-envelope icon"></span></a>
+        <a href="https://linkedin.com/kore4lyf"> <span class="fab fa-linkedin icon"></span></a>
+        <a href="https://github.com/kore4lyf"> <span class="fab fa-github icon"></span></a>
+    
+        <div>
+            <b>Phone:</b> +234 808 156 0856 <br>
+            <b>Nationality:</b> Nigerian <br>
+            <b>DOB:</b> November 8, 1997 <br>
+        </div>
     </header>
     <!-- Each Section has an ID (used for the anchor) and 
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
+    
+    
     <section id="section1" data-nav="Summary" class="active">
       <div class="landing__container">
-        <h2>Summary</h2>
-        <p>
-          Passionate about providing solution to problems and automating tasks. 
-          Well-versed in programming languages like C, Python and JavaScript. 
-          Knowledgeable in Software development, Machine learning, Text 
-          processing and Database management. My goal is to acquire experience, 
-          apply my skills to solve problems and improve efficiency in businesses.
-        </p>
+        <div class="h2-container"> <h2 class="auto-width"> <span class="fas fa-star h2-icon"> </span>Summary</h2> </div>
+            <div class="p-container"> 
+                <p class="auto-width">
+                  Passionate about providing solution to problems and automating tasks. 
+                  Well-versed in programming languages like C, Python and JavaScript. 
+                  Knowledgeable in Software development (Web and Mobile development), Machine learning, 
+                  Blockchain Developmemt. My goal is to acquire experience, put my knowledge to work, 
+                  solve problems and improve efficiency in businesses.
+                </p>
+            </div>
       </div>
     </section>
+
+
     <section id="section2" data-nav="Skill">
       <div class="landing__container">
-        <h2>SKill Highlights</h2>
-        <h3>Technical Skills</h3>
-        <p>
-              <b>Programming languages</b> - Python, C, JavaScript<br>
+        <div class="h2-container"> <h2 class="auto-width"> <span class="fas fa-cogs h2-icon"> </span>Skill Highlights</h2> </div>
+        <div class="p-container">
+            <h3 class="auto-width">Technical Skills</h3>
+            <p class="auto-width">
+              <b>Programming languages</b> - C, GO, Python, JavaScript<br>
               <b>Database</b> - MySQL, PostgreSQl, SQLite<br>
               <b>Web development</b> - HTML5, CSS3, Bootstrap, JQuery<br> 
               <b>Machine learning/data analysis</b> - Sci-kit Learn, Numpy, Pandas, 
               Matplotlib<br>
               <b>Mobile development</b> - Kivy & KivyMD.<br> 
               <b>Cloud</b> - AWS (Amazon web services)<br> 
-              <b>Others</b> - MVC (Model View Control), Regex<br> <br> <br>
+              <b>Others</b> - MVC (Model View Control), Regex<br> <br>
+            </p>
 
-          <h3>Non-technical Skills </h3>
-              Strong decision making, Problem solving ability.
-        </p>
+            <h3 class="auto-width">Non-technical Skills</h3>
+            <p class="auto-width">
+                Strong decision making, Problem solving ability.
+            </p>
+        </div>
       </div>
     </section>
     <section id="section3" data-nav="Project">
-      <div class="landing__container">
-        <h2>Project</h2>
-        <p>          
-          <b>Malware Detector</b> - The malware detector was a school project
-          (Malware detection system using Random Forest Classifier). The malware 
-          detector uses a trained machine learning model to detect malicious 
-          executable files. The machine learning algorithm that was used to train 
-          the model is called Random Forest Classifier. 
-          Tools: Python, Sci-kit Learn, Numpy, Pandas, Joblib, Kivy, KivyMD, PEfile
-          <br> <br>
-           <b>Diabetes Diagnosis</b> - The diabetes diagnosis app uses a deep 
-          learning learning algorithm called MLPClassifier (Multilayer perceptron 
-          classifier) to determine if a person has diabetes or not, depending on 
-          some diabetes risk factor data collected from the user.
-          Tools: Python, Sci-kit Learn, Numpy, Pandas, Joblib, Kivy, KivyMD
-        </p>
+      <div class="landing__container"> 
+        <div class="h2-container"> <h2 class="auto-width"> <span class="fas fa-project-diagram h2-icon"> </span>Project </h2> </div>
+            <div class="p-container">
+                <p class="auto-width">          
+                  <b>Malware Detector</b> - The malware detector was a school project
+                  (Malware detection system using Random Forest Classifier). The malware 
+                  detector uses a trained machine learning model to detect malicious 
+                  executable files. The machine learning algorithm that was used to train 
+                  the model is called Random Forest Classifier. <br>
+                  <b>Tools</b>: Python, Sci-kit Learn, Numpy, Pandas, Joblib, Kivy, KivyMD, PEfile
+                  <br> <br>
+                   <b>Diabetes Diagnosis</b> - The diabetes diagnosis app uses a deep 
+                  learning learning algorithm called MLPClassifier (Multilayer perceptron 
+                  classifier) to determine if a person has diabetes or not, depending on 
+                  some diabetes risk factor data collected from the user.<br>
+                  <b>Tools</b>: Python, Sci-kit Learn, Numpy, Pandas, Joblib, Kivy, KivyMD
+                </p>
+            </div>    
       </div>
     </section>
+    <section id="section4" data-nav="Experience">
+      <div class="landing__container">
+        <div class="h2-container"> <h2 class="auto-width"> <span class="fas fa-briefcase h2-icon"> </span> Experience</h2> </div>
+            <div class="p-container">
+                <div class="auto-width"> <b>Job Title:</b> (IS) INFORMATION SYSTEM INTERN </div>
+                <br>
+                <h3 class="auto-width">Addax petroleum Nigeria Limited (2019 - 2020)</h3>
+                <p class="auto-width">  
+                    Worked as an intern for 12 months, as a requirement for the completion 
+                    of my Nation Diploma course in school. <br>
+                    - Provided solution to staff complaints which helped reduc"e job 
+                    delivery latency. <br>
+                    - Represent my department in meetings and attend to all IT related 
+                    problems during the meeting. <br> 
+                    - Participated in software project meetings with the IS team, to help 
+                    deliver an ATS (Accomodations and Transportation System) for 
+                    staffs. <br>
+                    - Collaborated with members of the IS team to develop an ATS 
+                    (Accommodation and transport system) which eased and 
+                    automated the manual process of requesting accommodation and 
+                    transport. <br>
+                    - Trained and mentored new interns, which improved their 
+                    contribution to the companies daily activity and helped them gain 
+                    insight into problem solving. <br>
+                    Key achievement: Developed an Asset Request System, which 
+                    allowed staffs to request IT devices needed for a meeting. <br>
+                </p>
+            </div>    
+      </div>
+    </section>
+        <section id="section5" data-nav="Education">
+      <div class="landing__container">
+        <div class="h2-container"> <h2 class="auto-width"> <span class="fas fa-graduation-cap  h2-icon"> </span> Education</h2> </div>
+            <div class="p-container">
+                <p class="auto-width">  
+                    - <b>ALX / HOLBERTON</b> <br>
+                    Software Engineering (2022 -2023) <br> <br> 
+                
+                    - <b>YABA COLLEGE OF TECHNOLOGY</b> <br>
+                    Computer Science (2020 - 2022) <br>
+                    Higher National Diploma (<b>HND</b>) - Lagos, Nigeria <br> <br>
+                    
+                    - <b>YABA COLLEGE OF TECHNOLOGY</b> <br>
+                    Computer Science (2016 - 2018) <br>
+                    National Diploma (<b>ND</b>) - Lagos, Nigeria <br> <br>
+                    
+                    - <b>KING ADO HIGH SCHOOL</b> <br>
+                    <b>Secondary School</b> (2009 - 2015) - Lagos, Nigeria <br> <br>
+                </p>
+            </div>    
+      </div>
+    </section>
+    <section id="section6" data-nav="Courses">
+      <div class="landing__container">
+        <div class="h2-container"> <h2 class="auto-width"> <span class="fas fa-award h2-icon"> </span>Courses/Certification</h2> </div>
+            <div class="p-container">
+                <p class="auto-width">  
+                    - <b>Python</b> 
+                    <br>
+                    Udacity (Python programming Foundations) 2022 <a href="#">view</a> <br>
+                    Coursera (Programming for everybody) 2022 <a href="#">view</a>
+                    <br> 
+                    <br>
+                    
+                    - <b>MySql</b> 
+                    <br>
+                    BitDegree (Interactive SQL Tutorial) 2018 <a href="#">view</a>
+                </p>
+            </div>    
+      </div>
+    </section>
+    
+    
+    
   </main>
   <footer class="page__footer">
     <p>&copy Faleye Korede</p>

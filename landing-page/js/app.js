@@ -26,6 +26,9 @@
 const pageFragment = document.createDocumentFragment();
 const sections = document.querySelectorAll('section');
 const navLinks = document.getElementById('navbar__list');
+const pageHeader = document.querySelector('.page__header');
+
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -35,7 +38,6 @@ const navLinks = document.getElementById('navbar__list');
 // Checks if a given section is in the viewport
 let isInViewport = (section) => {
     const clientViewPort = section.getBoundingClientRect();
-    // console.log(clientViewPort);
     
     return (
         clientViewPort.top >= 0 &&
@@ -44,7 +46,6 @@ let isInViewport = (section) => {
         clientViewPort.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-
 
 
 /**
@@ -66,22 +67,41 @@ let buildNav = () => {
 }
 
 
+let prevScrolledSection;
+let activeSectionId;
 // Add class 'active' to section when near top of viewport
 let setActiveSection = () => {
     for (const section of sections) {
         if (isInViewport(section)) {
-            section.classList.add("active");
+            //highlight active section
+            section.querySelector(".h2-container").classList.add("active");
+            
+            // highlight Active section's link at navbar
+            activeSectionId = section.getAttribute("id");
+            document.querySelector(`a[data-id=${activeSectionId}]`).classList.add("active");
+            
+            if (prevScrolledSection) {
+                prevScrolledSection.classList.remove("active");
+            }
+            prevScrolledSection = section;
+            
+    
         }else{
-            section.classList.remove("active");
+            // Remove highlight from Unactive section
+            section.querySelector(".h2-container").classList.remove("active");
+            
+            // Remove highlight from unactive section's link at navbar
+            activeSectionId = section.getAttribute("id");
+            document.querySelector(`a[data-id=${activeSectionId}]`).classList.remove("active");
         }
     }
 }
 
 // Scroll to anchor ID using scrollTo event
 let scrollTo = (section) => {
-        // Scroll to clicked section
-        section.scrollIntoView({block: "center", behavior: "smooth"});
-    }
+    // Scroll to clicked section
+    section.scrollIntoView({top: 0, behavior: "smooth"});
+}
 
 
 /**
@@ -89,18 +109,52 @@ let scrollTo = (section) => {
  * Begin Events
  * 
 */
+
+// Stored previous anchor tag
+let prevActiveLink;
+
 // Add click event listener to nav bar
 navLinks.addEventListener('click', (e) => {
     e.preventDefault();
     if(e.target.nodeName === 'A'){
         const sectionId = e.target.getAttribute('data-id');
         const section = document.getElementById(sectionId);
+        
+        // Make link active 
+        e.target.classList.add("active");
+        
+        // Make previous active link unactive 
+        if (prevActiveLink) {
+            prevActiveLink.classList.remove("active");
+        }
+        prevActiveLink = e.target;
+        
+        // scroll to section
         scrollTo(section);
+        
+            document.querySelector(".page__header").style.top = "-80px";
+            
+        
     }
 });
 
+
+// Stores the previous vertical page offsets
+let prevScrollPos = window.pageYOffset;
+
 document.addEventListener('scroll', () => {
+    // sets active sections 
     setActiveSection();
+
+    // Hide page hea
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        document.querySelector(".page__header").style.top = "0";
+    } else {
+        document.querySelector(".page__header").style.top = "-80px";
+    }
+    
+    prevScrollPos = currentScrollPos;
 });
 
 

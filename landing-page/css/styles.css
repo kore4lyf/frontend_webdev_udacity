@@ -15,108 +15,139 @@
     --clr-dark-gray: #292929;
     --clr-blue: #0056a2;
 }
+
 body {
-    /* background: rgb(136,203,171); */
-    /* background: linear-gradient(0deg, rgb(158, 2, 67) 0%, rgb(0, 86, 162) 100%); */
     margin: 0;
     font-family: 'Merriweather', sans-serif;
     color: var(--clr-dark-gray);
 }
 
-
-/* Typeography General*/
-h1 {
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
-    margin: 2em 1rem;
+section {
+    margin-block: 10rem;
 }
 
-@media only screen and (min-width: 35em){
-    h1 {
-        font-size: 5em;
-        margin: 2em 4rem 1em;
-    }
+
+/* Typeography General*/
+.main__hero {
+    margin: 1rem 0rem;
+    line-height: 2.5rem;
+}
+
+h1 {
+    font-family: 'Fira Sans', sans-serif;
 }
 
 h2 {
-    border-bottom: 0.5px solid var(--clr-gray);
-    color: var(--clr-blue);
-    font-family: 'Oxygen', Sans-Serif;
-    font-size: 2.5rem;
-    padding-bottom: 0.5rem;
+    color: #fff;
+    font-family: 'Fira Sans', sans-serif;
+    margin-block: 1rem;
+    padding-block: 1rem;
 }
 
-h3 {
-    font-size: 1.8rem;
+.h2-container {
+    background: var(--clr-dark-gray);
+    margin-block: 1rem;
+    width: 100%;
+}
+
+.h2-icon {
+    margin-right: 10px;
 }
 
 b {
-    font-size:large;
-    font-weight: 800;
+    font-size:medium;
+    font-weight: 700;
+    color: var(--clr-dark-gray);
 }
+
 p {
-    line-height: 3rem;
-    /* color: #eee; */
+    line-height: 2.5rem;
+}
+
+.p-container {
+    width: 100%;
 }
 
 /* ---- Layout Rules ---- */
 main {
-    margin: 10vh 1em 10vh;
+    margin: 0px auto;
 }
 
 .main-hero {
-    min-height: 40vh;
     padding-top: 3em;
-}
-
-section {
-    position: relative;
-    margin-block: 2em;
 }
 
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.nav__menu {
-    padding: 10px !important;
-    background: var(--clr-dark-gray);
-    width: 100%;
+.icon {
+    color: var(--clr-blue);
+    font-size: 1.5rem;
+    padding: 5px;
+    padding-block: 0px;
 }
+
+.navbar__menu {
+    overflow: auto;
+}
+
 .navbar__menu ul {
-    padding-left: 0px;
-    margin: 0;
-    text-align: right;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin: 0px;
+    width: 100%;
 }
 
 .navbar__menu li {
     display: inline-block;
     font-size: 1.5em;
+    list-style-type: none;
+    padding: 0.5rem;
+    margin: 0px;
 }
 
 .navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
     text-decoration: none;
     color: var(--clr-blue);
-    transition: all ease-in-out 300ms;
 }
 
-.navbar__menu .menu__link:hover {
-    background: var(--clr-blue);
-    color: #fff;
-    transition: ease 0.3s all;
+.navbar__menu .menu__link:hover, 
+.navbar__menu .menu__link:focus,
+.navbar__menu a.active{
+    border-bottom: 3px solid var(--clr-blue);
 }
+
+
 
 /* Header Styles */
+.logo {
+    border: 3.5px solid var(--clr-dark-gray);
+    border-radius: 100px;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: 'Fira Sans', sans-serif;
+    padding: 5px;
+    margin: 5px;
+}
+
 .page__header {
-    background: rgba(41, 41, 41, 0.2);
-    backdrop-filter: blur(10px);
-    position: fixed;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 2px 5px var(--clr-gray);
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 5;
+    transition: top 300ms;
+}
+
+.page__header div {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* Footer Styles */
@@ -132,23 +163,31 @@ section {
 
 
 /* ---- Theme Rules ---- */
-/* Landing Container Styles */
-.landing__container {
-    padding: 1em;
-    text-align: left;
+
+/* Property Rules */ 
+.auto-width {
+    width: 80%;
+    margin: auto auto;
 }
 
-@media only screen and (min-width: 35em){
-    .landing__container {
-        max-width: 50em;
-        padding: 4em;
+.hide {
+    display: none;
+}
+
+/* Tablets */
+@media only screen and (max-width: 800px){
+    .auto-width {
+        width: 85%;
     }
 }
 
-section:nth-of-type(even) .landing__container {
-    margin-right: 0;
-    margin-left: auto;
+/* Mobile Phones*/ 
+@media only screen and (max-width: 400px){
+    .auto-width {
+        width: 90%;
+    }
 }
+
 
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
@@ -211,12 +250,11 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: active class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.active {
-    border: 0.5px solid var(--clr-blue);
-    border-radius: 10px;
+section div.active {
+    background: var(--clr-blue);
 }
 
-section.active .landing__container::before {
+section .active .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
