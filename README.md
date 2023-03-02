@@ -7,3 +7,6 @@
 - [Shopping Cart](./shopping_cart)
 
 - [Landing Page](./landing-page)
+
+## Author 
+Faleye Korede

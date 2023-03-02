@@ -60,3 +60,4 @@ This project is a multi-section landing page, with a dynamically updating naviga
 
 
 ## Author
+Faleye Korede
