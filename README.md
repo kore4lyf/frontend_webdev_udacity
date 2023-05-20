@@ -1,6 +1,6 @@
 # Udacity Frontend Nanodegree
 
-- [Animal Trading Card](./animal-trading-card)
+- [Animal Trading Cards](./animal-trading-cards)
 
 - [Blog](./blog) 
 
