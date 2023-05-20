@@ -15,6 +15,7 @@ My development process can be tracked thru commits.
 
 
 ## Tree
+<pre>
 root
 |-- css
 |   |-- styles.css
@@ -38,7 +39,7 @@ root
 |-- index.html
 |
 `-- README.md
-
+</pre>
 
 ## Technologies
 HTML, CSS and Javascript.
